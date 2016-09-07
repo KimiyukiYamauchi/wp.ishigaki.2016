@@ -43,5 +43,5 @@ wp_head();
             <li><a href="about.html">ホテル紹介</a></li>
             <li><a href="access.html">アクセス</a></li>
             <li><a href="contact.html">お問い合わせ</a></li>
-    1    </ul>
+        </ul>
     </nav><!-- /.globalNavi -->

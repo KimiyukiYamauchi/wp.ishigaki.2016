@@ -26,5 +26,13 @@ if(have_posts()) :
 
 <?php
     endwhile;
+else : // 記事がなかった場合
+?>
+    <?php if(is_search()) : // 検索ページの場合 ?>
+        <p>検索結果はありませんでした</p>
+    <?php else : // 以外のページの場合 ?>
+        <p>記事はありません。</p>
+    <?php endif; ?>
+<?php
 endif;
 ?>

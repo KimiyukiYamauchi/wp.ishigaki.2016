@@ -8,7 +8,7 @@
         ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class('entry'); ?>>
                 <h1 class="type-A">新着情報</h1>
-                <h2 class="title type-B"><span>お花見企画の予約を開始しました</span></h2>
+                <h2 class="title type-B"><span><?php the_title(); ?></span></h2>
 
                 <div class="entryInfo">
                     <div class="categories">
@@ -20,6 +20,8 @@
                 <section class="content">
                     <?php the_content(); ?>
                 </section><!-- /.content -->
+
+                <?php comments_template(); ?>
 
                 <nav class="postNavi">
                     <span class="prev"><?php previous_post_link('%link'); ?></span>

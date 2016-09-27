@@ -1,0 +1,7 @@
+#category-tabs .hide-if-no-js {
+	display: none;
+}
+
+#content-html {
+	display: none;
+}

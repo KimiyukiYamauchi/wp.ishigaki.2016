@@ -72,3 +72,24 @@ function my_pre_get_posts($query){
 		$query->set('posts_per_page', 3);
 	}
 }
+
+/**
+ * 管理画面用に独自のCSSを設定する
+ */
+add_action('admin_print_styles', 'print_admin_stylesheet');
+/**
+ * ログイン画面に独自のCSSを設定する
+ */
+add_action('login_head', 'print_admin_stylesheet');
+
+function print_admin_stylesheet(){
+	echo '<link href="' . get_template_directory_uri() . '/css/admin.css" type="text/css" rel="stylesheet" media="all" />' . PHP_EOL;
+}
+
+/**
+ * 必ずビジュアルモードは表示されるように設定
+ */
+add_filter('wp_default_editor', 'my_wp_default_editor');
+function my_wp_default_editor(){
+	return 'tinymce';
+}

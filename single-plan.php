@@ -7,13 +7,7 @@
         <h2 class="title type-B"><span>デラックス・ツインルーム</span></h2>
         <div class="plan">
             <div class="left">
-                <?php
-                $image = get_field('picture');
-                $url = $image['sizes']['medium']; // 中サイズ画像のURL
-                $width = $image['sizes']['medium-width']; // 中サイズ画像の横幅
-                $height = $image['sizes']['medium-height']; // 中サイズ画像の縦幅
-                ?>
-                <img src="<?php echo $url; ?>" height="<?php echo $height; ?>" width="<?php echo $width; ?>" alt="">
+                <?php display_image('picture', 'large'); ?>
             </div>
             <div class="right">
                 <?php the_content(); ?>

@@ -137,4 +137,31 @@ add_shortcode('price', 'shortcode_price');
 function shortcode_url(){
 	echo get_template_directory_uri();
 }
-add_shortcode('dir_url', 'shortcode_url');
+
+/**
+ * アイキャッチ画像を表示する処理を関数化
+ */
+function display_thumbnail(){
+	if(has_post_thumbnail() ){
+	 	echo '<a href="<?php get_permalink(); ?>">' .
+	 	the_post_thumbnail('thumbnail') . '</a>';
+	 }else{
+	    echo '<a href="' . get_permalink() . '"><img src="' .
+	    get_template_directory_uri() . '/images/common/noimage_180x180.png" height="180" width="180" alt=""></a>';
+	 }
+
+}
+
+/**
+ * 宿泊プランの個別記事の画像を表示する処理を関数化
+ */
+function display_image($field_name, $size = 'medium'){
+	$image = get_field($field_name);
+	if(!empty($image)){
+		$url = $image['sizes'][$size]; // 画像のURL
+        $width = $image['sizes'][$size . '-width']; // 画像の横幅
+        $height = $image['sizes'][$size . '-height']; // 画像の縦幅
+        echo '<img src="' . $url . '" height="' . $height
+        		. '" width="' .  $width .'" alt="" />';
+	}
+}

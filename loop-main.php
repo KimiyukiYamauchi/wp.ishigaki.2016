@@ -16,11 +16,9 @@ if(have_posts()) :
         <p>[<a href="<?php the_permalink(); ?>">続きを読む</a>]</p>
     </div>
     <figure>
-    <?php if(has_post_thumbnail() ) : ?>
-        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?>
-    <?php else : ?>
-        <a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/common/noimage_180x180.png" height="180" width="180" alt=""></a>
-    <?php endif; ?>
+    <div class="image">
+        <?php display_thumbnail(); ?>
+    </div>
     </figure>
 </article><!-- /.news -->
 

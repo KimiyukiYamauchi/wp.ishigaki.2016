@@ -137,6 +137,7 @@ add_shortcode('price', 'shortcode_price');
 function shortcode_url(){
 	echo get_template_directory_uri();
 }
+add_shortcode('dir_url', 'shortcode_url');
 
 /**
  * アイキャッチ画像を表示する処理を関数化
